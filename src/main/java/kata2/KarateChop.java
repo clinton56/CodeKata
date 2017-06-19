@@ -31,14 +31,14 @@ public class KarateChop {
         if (array.length == 0 || number < array[left] || number > array[right]) {
             return -1;
         }
-        int pivot = left + (right - left) / 2;
-        if (number < array[pivot]) {
-            return chopIt(number, array, left, pivot - 1);
+        int mid = left + (right - left) / 2;
+        if (number < array[mid]) {
+            return chopIt(number, array, left, mid - 1);
         }
-        if (number > array[pivot]) {
-            return chopIt(number, array, pivot + 1, right);
+        if (number > array[mid]) {
+            return chopIt(number, array, mid + 1, right);
         }
-        return pivot;
+        return mid;
     }
 
 }
